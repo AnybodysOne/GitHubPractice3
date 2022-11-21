@@ -21,12 +21,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     
+    func textFieldHandler(_ : UIAlertAction) {
+        if let text = textField.text {
+            array.append(text)
+            tableView.reloadData()
+        }
+        textField.text = ""
+    }
     
     @IBAction func whenButtonPressed(_sender: UIBarButtonItem){
         let alert = UIAlertController(title: "Pull Item from TextField?", message: nil, preferredStyle: .alert)
         let yes = UIAlertAction(title: "Yes", style: .default, handler: textFieldHandler())
         alert.addAction(yes)
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count

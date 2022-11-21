@@ -20,6 +20,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
     }
     
+    
+    func textFieldHandler(_ : UIAlertAction) {
+        if let text = textField.text {
+            array.append(text)
+            tableView.reloadData()
+        }
+        textField.text = ""
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }

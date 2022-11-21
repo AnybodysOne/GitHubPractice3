@@ -31,8 +31,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func whenButtonPressed(_sender: UIBarButtonItem){
         let alert = UIAlertController(title: "Pull Item from TextField?", message: nil, preferredStyle: .alert)
-        let yes = UIAlertAction(title: "Yes", style: .default, handler: textFieldHandler())
+        let yes = UIAlertAction(title: "Yes", style: .default, handler: textFieldHandler)
         alert.addAction(yes)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
     }
     
     
